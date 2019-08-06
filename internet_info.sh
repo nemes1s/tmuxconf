@@ -5,7 +5,7 @@ PUB_IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 INTERNET=''
 
-internet_info=`airport -I | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g'`
+internet_info=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep agrCtlRSSI | awk '{print $2}' | sed 's/-//g'`
 
 if [[ $internet_info -lt 20 ]]; then
     echo -n '#[fg=colour116]'
